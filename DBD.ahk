@@ -18,9 +18,10 @@ SetWorkingDir %A_ScriptDir% ; Ensures a consistent starting directory.
 
 STEAM_ID := 381210
 
-; Set these values to the resolution you normally have
-ResolutionX := 3440
-ResolutionY := 1440
+; Set these values to the resolution you normally have. They default to the resolution
+; of your monitor.
+ResolutionX := A_ScreenWidth
+ResolutionY := A_ScreenHeight
 
 ; This will be the resolution in which DBD runs
 DBDResolutionX := 2560
