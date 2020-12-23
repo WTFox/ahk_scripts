@@ -7,71 +7,71 @@ SetWorkingDir %A_ScriptDir% ; Ensures a consistent starting directory.
 history := {}
 
 ; Window management
-; Control + Win + X
+; Control + Win + <key>
 
 ; Left two thirds
 #^e::
-    RecordSizeAndPosition()
+    StoreSizeAndPositionOfActiveWindow()
     ResizeAndMoveWindow(Round(A_ScreenWidth/3)*2, A_ScreenHeight, 0, 0)
 Return
 
 ; Right two thirds
 #^t::
-    RecordSizeAndPosition()
+    StoreSizeAndPositionOfActiveWindow()
     ResizeAndMoveWindow(Round(A_ScreenWidth/3)*2, A_ScreenHeight, A_ScreenWidth-Round(A_ScreenWidth/3)*2, 0)
 Return
 
 ; Left third
 #^d::
-    RecordSizeAndPosition()
+    StoreSizeAndPositionOfActiveWindow()
     ResizeAndMoveWindow(Round(A_ScreenWidth/3), A_ScreenHeight, 0, 0)
 Return
 
 ; Middle third
 #^f::
-    RecordSizeAndPosition()
+    StoreSizeAndPositionOfActiveWindow()
     ResizeAndMoveWindow(Round(A_ScreenWidth/3), A_ScreenHeight, A_ScreenWidth-Round((A_ScreenWidth/3)*2), 0)
 Return
 
 ; Right third
 #^g::
-    RecordSizeAndPosition()
+    StoreSizeAndPositionOfActiveWindow()
     ResizeAndMoveWindow(Round(A_ScreenWidth/3), A_ScreenHeight, A_ScreenWidth-Round((A_ScreenWidth/3)*1), 0)
 Return
 
 ; Bottom left quarter
 #^j::
-    RecordSizeAndPosition()
+    StoreSizeAndPositionOfActiveWindow()
     ResizeAndMoveWindow(Round(A_ScreenWidth/2), Round(A_ScreenHeight/2), 0, Round(A_ScreenHeight/2))
 Return
 
 ; Bottom right quarter
 #^k::
-    RecordSizeAndPosition()
+    StoreSizeAndPositionOfActiveWindow()
     ResizeAndMoveWindow(Round(A_ScreenWidth/2), Round(A_ScreenHeight/2),Round(A_ScreenWidth/2), Round(A_ScreenHeight/2))
 Return
 
 ; Top left quarter
 #^u::
-    RecordSizeAndPosition()
+    StoreSizeAndPositionOfActiveWindow()
     ResizeAndMoveWindow(Round(A_ScreenWidth/2), Round(A_ScreenHeight/2),0,0)
 Return
 
 ; Top right quarter
 #^i::
-    RecordSizeAndPosition()
+    StoreSizeAndPositionOfActiveWindow()
     ResizeAndMoveWindow(Round(A_ScreenWidth/2), Round(A_ScreenHeight/2), Round(A_ScreenWidth/2), 0)
 Return
 
 ; Full Screen
 #^Enter::
-    RecordSizeAndPosition()
+    StoreSizeAndPositionOfActiveWindow()
     ResizeAndMoveWindow(A_ScreenWidth, A_ScreenHeight, 0, 0)
 Return
 
 ; Center the window
 #^c::
-    RecordSizeAndPosition()
+    StoreSizeAndPositionOfActiveWindow()
     WinGetPos, X, Y, W, H, A
     DestX := Round(A_ScreenWidth/2) - Round(W/2)
     DestY := Round(A_ScreenHeight/2) - Round(H/2)
@@ -80,7 +80,7 @@ Return
 
 ; Focus view
 #^m::
-    RecordSizeAndPosition()
+    StoreSizeAndPositionOfActiveWindow()
     WinGetPos, X, Y, W, H, A
 
     W := Round(A_ScreenWidth * 0.80)
@@ -102,7 +102,7 @@ Return
 
 ; Functions
 
-RecordSizeAndPosition() {
+StoreSizeAndPositionOfActiveWindow() {
     global history
     WinGetTitle, activeWinTitle, A
     WinGetPos, _X, _Y, _W, _H, A
