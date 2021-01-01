@@ -92,6 +92,12 @@ Return
     ResizeAndMoveWindow(W, H, DestX, DestY)
 Return
 
+; Dead By Daylight Dimensions
+#^b::
+    dbdWidth := A_ScreenWidth * 0.75
+    ResizeAndMoveWindow(dbdW, 1437, Round(A_ScreenWidth/2) - Round(dbdW/2), 0)
+Return
+
 ; Restore window to previous state
 #^BackSpace::
     global history
