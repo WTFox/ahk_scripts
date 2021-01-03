@@ -15,6 +15,16 @@ history := {}
     ResizeAndMoveWindow(Round(A_ScreenWidth/3)*2, A_ScreenHeight, 0, 0)
 Return
 
+#^r::
+    ; 16:9 centered
+    ; Almost the same as e and t keys, but subtracts one pixel from the bottom to
+    ; prevent activating the start bar while playing games in windowed mode
+    StoreSizeAndPositionOfActiveWindow()
+    desiredWidth := A_ScreenWidth * 0.75
+    desiredHeight := A_ScreenHeight - 1
+    ResizeAndMoveWindow(desiredWidth, desiredHeight, Round(A_ScreenWidth/2) - Round(desiredWidth/2), 0)
+Return
+
 ; Right two thirds
 #^t::
     StoreSizeAndPositionOfActiveWindow()
@@ -90,12 +100,6 @@ Return
     DestY := Round(A_ScreenHeight/2) - Round(H/2)
 
     ResizeAndMoveWindow(W, H, DestX, DestY)
-Return
-
-; Dead By Daylight Dimensions
-#^b::
-    dbdWidth := A_ScreenWidth * 0.75
-    ResizeAndMoveWindow(dbdW, 1437, Round(A_ScreenWidth/2) - Round(dbdWidth/2), 0)
 Return
 
 ; Restore window to previous state
