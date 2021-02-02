@@ -16,13 +16,23 @@ history := {}
 Return
 
 #^r::
-    ; 16:9 centered
+    ; 16:9.
     ; Almost the same as e and t keys, but subtracts one pixel from the bottom to
     ; prevent activating the start bar while playing games in windowed mode
     StoreSizeAndPositionOfActiveWindow()
     desiredWidth := A_ScreenWidth * 0.75
     desiredHeight := A_ScreenHeight - 1
     ResizeAndMoveWindow(desiredWidth, desiredHeight, Round(A_ScreenWidth/2) - Round(desiredWidth/2), 0)
+Return
+
+#^y::
+    ; 16:9
+    ; Almost the same as e and t keys, but subtracts one pixel from the bottom to
+    ; prevent activating the start bar while playing games in windowed mode
+    StoreSizeAndPositionOfActiveWindow()
+    desiredWidth := A_ScreenWidth * 0.75
+    desiredHeight := A_ScreenHeight - 1
+    ResizeAndMoveWindow(desiredWidth, desiredHeight, Round(A_ScreenWidth/4), 0)
 Return
 
 ; Right two thirds
