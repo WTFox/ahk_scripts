@@ -10,12 +10,12 @@ history := {}
 ; Control + Win + <key>
 
 ; Left two thirds
-#^e::
+!^e::
     StoreSizeAndPositionOfActiveWindow()
     ResizeAndMoveWindow(Round(A_ScreenWidth/3)*2, A_ScreenHeight, 0, 0)
 Return
 
-#^r::
+!^r::
     ; 16:9.
     ; Almost the same as e and t keys, but subtracts one pixel from the bottom to
     ; prevent activating the start bar while playing games in windowed mode
@@ -25,7 +25,7 @@ Return
     ResizeAndMoveWindow(desiredWidth, desiredHeight, Round(A_ScreenWidth/2) - Round(desiredWidth/2), 0)
 Return
 
-#^y::
+!^y::
     ; 16:9
     ; Almost the same as e and t keys, but subtracts one pixel from the bottom to
     ; prevent activating the start bar while playing games in windowed mode
@@ -36,61 +36,61 @@ Return
 Return
 
 ; Right two thirds
-#^t::
+!^t::
     StoreSizeAndPositionOfActiveWindow()
     ResizeAndMoveWindow(Round(A_ScreenWidth/3)*2, A_ScreenHeight, A_ScreenWidth-Round(A_ScreenWidth/3)*2, 0)
 Return
 
 ; Left third
-#^d::
+!^d::
     StoreSizeAndPositionOfActiveWindow()
     ResizeAndMoveWindow(Round(A_ScreenWidth/3), A_ScreenHeight, 0, 0)
 Return
 
 ; Middle third
-#^f::
+!^f::
     StoreSizeAndPositionOfActiveWindow()
     ResizeAndMoveWindow(Round(A_ScreenWidth/3), A_ScreenHeight, A_ScreenWidth-Round((A_ScreenWidth/3)*2), 0)
 Return
 
 ; Right third
-#^g::
+!^g::
     StoreSizeAndPositionOfActiveWindow()
     ResizeAndMoveWindow(Round(A_ScreenWidth/3), A_ScreenHeight, A_ScreenWidth-Round((A_ScreenWidth/3)*1), 0)
 Return
 
 ; Bottom left quarter
-#^j::
+!^j::
     StoreSizeAndPositionOfActiveWindow()
-    ResizeAndMoveWindow(Round(A_ScreenWidth/2), Round(A_ScreenHeight/2), 0, Round(A_ScreenHeight/2))
+    ResizeAndMoveWindow(Round(A_ScreenWidth/3), Round(A_ScreenHeight/2), 0, Round(A_ScreenHeight/2))
 Return
 
 ; Bottom right quarter
-#^k::
+!^k::
     StoreSizeAndPositionOfActiveWindow()
-    ResizeAndMoveWindow(Round(A_ScreenWidth/2), Round(A_ScreenHeight/2),Round(A_ScreenWidth/2), Round(A_ScreenHeight/2))
+    ResizeAndMoveWindow(Round(A_ScreenWidth/3), Round(A_ScreenHeight/2), A_ScreenWidth-Round(A_ScreenWidth/3), Round(A_ScreenHeight/2))
 Return
 
 ; Top left quarter
-#^u::
+!^u::
     StoreSizeAndPositionOfActiveWindow()
-    ResizeAndMoveWindow(Round(A_ScreenWidth/2), Round(A_ScreenHeight/2),0,0)
+    ResizeAndMoveWindow(Round(A_ScreenWidth/3), Round(A_ScreenHeight/2),0,0)
 Return
 
 ; Top right quarter
-#^i::
+!^i::
     StoreSizeAndPositionOfActiveWindow()
-    ResizeAndMoveWindow(Round(A_ScreenWidth/2), Round(A_ScreenHeight/2), Round(A_ScreenWidth/2), 0)
+    ResizeAndMoveWindow(Round(A_ScreenWidth/3), Round(A_ScreenHeight/2), A_ScreenWidth-Round(A_ScreenWidth/3), 0)
 Return
 
 ; Full Screen
-#^Enter::
+!^Enter::
     StoreSizeAndPositionOfActiveWindow()
     ResizeAndMoveWindow(A_ScreenWidth, A_ScreenHeight, 0, 0)
 Return
 
 ; Center the window
-#^c::
+!^c::
     StoreSizeAndPositionOfActiveWindow()
     WinGetPos, X, Y, W, H, A
     DestX := Round(A_ScreenWidth/2) - Round(W/2)
@@ -99,7 +99,7 @@ Return
 Return
 
 ; Focus view
-#^m::
+!^m::
     StoreSizeAndPositionOfActiveWindow()
     WinGetPos, X, Y, W, H, A
 
@@ -113,7 +113,7 @@ Return
 Return
 
 ; Restore window to previous state
-#^BackSpace::
+!^BackSpace::
     global history
     WinGetTitle, winTitleToRestore, A
     size := history[winTitleToRestore].Pop()
