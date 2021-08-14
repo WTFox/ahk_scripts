@@ -80,7 +80,7 @@ Return
 ; Top right quarter
 !^i::
     StoreSizeAndPositionOfActiveWindow()
-    ResizeAndMoveWindow(Round(A_ScreenWidth/3), Round(A_ScreenHeight/2), A_ScreenWidth-Round(A_ScreenWidth/3), 0)
+    ResizeAndMoveWindow(A_ScreenWidth-Round(A_ScreenWidth/3), Round(A_ScreenHeight/2), A_ScreenWidth-Round(A_ScreenWidth/3), 0)
 Return
 
 ; Full Screen
