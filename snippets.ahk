@@ -5,3 +5,7 @@ SendMode Input ; Recommended for new scripts due to its superior speed and relia
 SetWorkingDir %A_ScriptDir% ; Ensures a consistent starting directory.
 
 :*:@@::anthonyfox1988@gmail.com
+^[::Send {Escape}
+
++Escape::Send {~}
+
