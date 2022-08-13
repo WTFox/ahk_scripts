@@ -117,11 +117,7 @@ Return
     W := Round(W * 1.1)
     H := Round(H * 1.1)
 
-    DestX := Round(A_ScreenWidth/2) - Round(W/2)
-    DestY := Round(A_ScreenHeight/2) - Round(H/2)
-
-    ResizeAndMoveWindow(W, H, DestX, DestY)
-    CenterWindow()
+    ResizeAndMoveWindow(W, H, X, Y)
 
 Return
 
@@ -133,11 +129,7 @@ Return
     W := Round(W * 0.9)
     H := Round(H * 0.9)
 
-    DestX := Round(A_ScreenWidth/2) - Round(W/2)
-    DestY := Round(A_ScreenHeight/2) - Round(H/2)
-
-    ResizeAndMoveWindow(W, H, DestX, DestY)
-    CenterWindow()
+    ResizeAndMoveWindow(W, H, X, Y)
 
 Return
 
