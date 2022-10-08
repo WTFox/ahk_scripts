@@ -15,6 +15,7 @@ history := {}
     ResizeAndMoveWindow(Round(A_ScreenWidth/3)*2, A_ScreenHeight, 0, 0)
 Return
 
+; 16:9 centered
 !^r::
     ; 16:9.
     ; Almost the same as e and t keys, but subtracts one pixel from the bottom to
@@ -25,6 +26,17 @@ Return
     ResizeAndMoveWindow(desiredWidth, desiredHeight, Round(A_ScreenWidth/2) - Round(desiredWidth/2), 0)
 Return
 
+; Streamer res
+!^s::
+    ; 16:9.
+    ; Almost the same as e and t keys, but subtracts one pixel from the bottom to
+    ; prevent activating the start bar while playing games in windowed mode
+    StoreSizeAndPositionOfActiveWindow()
+    desiredWidth := 2560 ; A_ScreenWidth * 0.75
+    desiredHeight := 1439 ;A_ScreenHeight - 1
+    ResizeAndMoveWindow(desiredWidth, desiredHeight, A_ScreenWidth - desiredWidth, 0)
+Return
+
 !^y::
     ; 16:9
     ; Almost the same as e and t keys, but subtracts one pixel from the bottom to
@@ -33,6 +45,18 @@ Return
     desiredWidth := A_ScreenWidth * 0.75
     desiredHeight := A_ScreenHeight - 1
     ResizeAndMoveWindow(desiredWidth, desiredHeight, Round(A_ScreenWidth/4), 0)
+Return
+
+; Left half
+!^h::
+    StoreSizeAndPositionOfActiveWindow()
+    ResizeAndMoveWindow(Round(A_ScreenWidth/2), A_ScreenHeight, 0, 0)
+Return
+
+; Right half
+!^l::
+    StoreSizeAndPositionOfActiveWindow()
+    ResizeAndMoveWindow(Round(A_ScreenWidth/2), A_ScreenHeight, Round(A_ScreenWidth/2), 0)
 Return
 
 ; Right two thirds
