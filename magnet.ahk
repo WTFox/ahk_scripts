@@ -124,7 +124,7 @@ Return
     StoreSizeAndPositionOfActiveWindow()
     WinGetPos, X, Y, W, H, A
 
-    W := Round(A_ScreenWidth * 0.75)
+    W := Round(A_ScreenWidth * 0.60)
     H := Round(A_ScreenHeight * 0.80)
 
     DestX := Round(A_ScreenWidth/2) - Round(W/2)
