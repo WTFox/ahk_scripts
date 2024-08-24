@@ -4,6 +4,25 @@
 SendMode Input ; Recommended for new scripts due to its superior speed and reliability.
 SetWorkingDir %A_ScriptDir% ; Ensures a consistent starting directory.
 
+:*:@@::anthonyfox1988@gmail.com
+
+; shift + ctrl + 1 -> Terminal
+; ^+1::SwitchToApp("wezterm-gui.exe")
+; <F8> -> Terminal
+F8::SwitchToApp("wezterm-gui.exe")
+
+; shift + ctrl + 2 -> Firefox
+; ^+2::SwitchToApp("firefox.exe")
+; <F9> -> Firefox
+F9::SwitchToApp("firefox.exe")
+
+; shift + ctrl + 3 -> Discord
+; ^+3::SwitchToApp("Discord.exe")
+; <F10> -> Discord
+F10::SwitchToApp("Discord.exe")
+
+; ------------
+
 SwitchToApp(name) {
   windowHandleId := WinExist("ahk_exe " name)
   windowExistsAlready := windowHandleId > 0
@@ -27,17 +46,4 @@ SwitchToApp(name) {
     Run, wt
   }
 }
-
-; ------------
-
-:*:@@::anthonyfox1988@gmail.com
-
-; shift + ctrl + 1 -> Terminal
-^+1::SwitchToApp("WindowsTerminal.exe")
-
-; shift + ctrl + 2 -> Brave
-^+2::SwitchToApp("Brave.exe")
-
-; shift + ctrl + 3 -> Discord
-^+3::SwitchToApp("Discord.exe")
 
