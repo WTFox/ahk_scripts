@@ -133,6 +133,8 @@ Return
     ResizeAndMoveWindow(W, H, DestX, DestY)
 Return
 
+^Up::Send {LWin down}{Tab}{LWin up}
+
 ; Enhance
 !^=::
     StoreSizeAndPositionOfActiveWindow()
