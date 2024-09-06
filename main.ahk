@@ -1,31 +1,30 @@
-#Persistent
 #SingleInstance Force
-#InstallKeybdHook
-#NoEnv
-#HotkeyInterval 2000
-#MaxThreadsPerHotkey 1
-#Warn
+; #Warn - for help debugging
 
-#Include A_ScriptDir "\lib\clipboard.ahk"
-#Include A_ScriptDir "\lib\hazeover.ahk"
-#Include A_ScriptDir "\lib\magnet.ahk"
-#Include A_ScriptDir "\lib\keys.ahk"
+#Include "C:\dev\ahk_scripts\lib\spongebob.ahk"
+#Include "C:\dev\ahk_scripts\lib\windowmanager.ahk"
 
 ::@@::anthonyfox1988@gmail.com
 
-; Dim everything but the active window
-^!d::ToggleDim()
+; Keys
+; ^ = Ctrl
+; ! = Alt
+; + = Shift
+; # = Win
 
-; Open clipboard history
-^+v::ShowClipboardMenu()
+; sPoNgEbOb tExT LoL
+^+v::PasteSpongebobText()
+
+; Mission control
+^Up:: 
+{
+    Send "{LWin down}{Tab}{LWin up}"
+}
 
 ; Application hotkeys
 F9::WindowManager.SwitchToApp("wezterm-gui.exe")
 F10::WindowManager.SwitchToApp("firefox.exe")
 F11::WindowManager.SwitchToApp("Discord.exe")
-
-; Mission control
-^Up::Send {LWin down}{Tab}{LWin up}
 
 ; Hotkeys for moving windows around
 !^e::WindowManager.LeftTwoThirds()
