@@ -1,7 +1,7 @@
 SpongebobText(text) {
     result := ""
     for k, v in StrSplit(text) {
-        result .= (Mod(k, 2) ? StrLower(v) : StrUpper(v))
+        result .= (Mod(k, 3) ? StrLower(v) : StrUpper(v))
     }
     return result
 }
