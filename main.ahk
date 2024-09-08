@@ -1,8 +1,10 @@
-#SingleInstance Force
+#SingleInstance force
 ; #Warn - for help debugging
 
-#Include "C:\dev\ahk_scripts\lib\spongebob.ahk"
-#Include "C:\dev\ahk_scripts\lib\windowmanager.ahk"
+; #include %A_ScriptDir%\lib\hazeover.ahk
+#include %A_ScriptDir%\lib\spongebob.ahk
+#include %A_ScriptDir%\lib\windowmanager.ahk
+
 
 ::@@::anthonyfox1988@gmail.com
 
@@ -11,6 +13,8 @@
 ; ! = Alt
 ; + = Shift
 ; # = Win
+
+; !^0::ToggleDim() 
 
 ; sPoNgEbOb tExT LoL
 ^+v::PasteSpongebobText()
